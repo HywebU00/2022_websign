@@ -1,0 +1,254 @@
+@charset "utf-8";
+// 共通
+@import "_variable";					//變數
+@import "sass/_normalize";				//reset
+@import "sass/_mixin";					//客製MIXIN
+@import "sass/_btn";					//按鈕設定
+@import "sass/_font";					//文字設定
+@import "sass/_form";					//表單
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #9ee1dc;
+}
+.login{
+	width: 1000px;
+	height: 630px;
+	margin: 0 auto;
+	background: url('../images/login-bg.jpg')no-repeat left top;
+	background-size: 100% auto;
+	position: relative;
+
+	h1{
+		margin: 0;
+		padding: 0;
+		img{
+			width: 50%;
+			position: relative;
+			top:60px;
+			left: 420px;
+		}
+	}
+	.form_inline{
+		max-width: 450px;
+		position: absolute;
+		top:28%;
+		left: 52%;
+
+		.form_grp{
+			display: block;
+			// margin: 0;
+		}
+		label{
+			width:4em;
+			text-align: right;
+			float: left;
+			line-height: 2em;
+		}
+
+		.textinput{
+			width: 300px;
+		}
+		.textinput2{
+			width: 150px;
+		}
+		.codeimg{
+			vertical-align: middle;
+			height: 30px;
+		}
+		.btn_grp{
+			padding-left: 6.5em;
+			margin-top: 1em;
+			text-align: center;
+
+			.btn1{
+				background: #028d8c;
+				border: none;
+				&:hover{
+					background: darken(#028d8c, 5);
+				}
+			}
+			.btn2{
+				background: #5e5d5d;
+				border: none;
+				&:hover{
+					background: darken(#5e5d5d, 5);
+				}
+			}
+			.btn3{
+				background: #ff7259;
+				border: none;
+				&:hover{
+					background: darken(#ff7259, 5);
+				}
+			}
+			input[type="button"] {
+				border: none;
+			}
+		}
+		.btn_grp2{
+			padding:0 0 0 4.5em;
+			.btn4{
+				background: #028d8c;
+				border: none;
+				width: 100%;
+				border: solid 1px darken(#028d8c, 5);
+				&:hover{
+					background: darken(#028d8c, 5);
+				}
+			}
+			input[type="button"] {
+				border: none;
+			}
+		}
+	}
+
+	.copyright{
+		font-size: .75em;
+		line-height: 1.5em;
+		background: #555;
+		color:#fff;
+		padding: 0;
+	// position: absolute;
+	position: relative;
+	top: 500px;
+	width: 1000px;
+	overflow: hidden;
+	p{
+		margin: 0;
+		padding: 1em 2em;
+		display: inline-block!important;
+		vertical-align: top;
+		float: left;
+	}
+	.f-info{
+		margin: 0;
+		display: inline-block;
+
+	}
+}
+
+}
+
+
+.register{
+	width: 1000px;
+	height: 580px;
+	margin: 0 auto;
+	background: url('../images/login-bg.jpg')no-repeat left top;
+	background-size: 100% auto;
+	position: relative;
+
+	h1{
+		margin: 0;
+		padding: 0;
+		img{
+			width: 50%;
+			margin: .3em 0 0 251px;
+		}
+	}
+	h2{
+		margin: .5em 0 .3em 350px;
+		padding: 0;		
+	}
+	.form_inline{
+		max-width: 500px;
+		position: relative;
+		top:10px;
+		left: 50%;
+
+		.form_grp{
+			display: block;
+		}
+		label{
+			width:8em;
+			text-align: right;
+			float: left;
+			line-height: 2em;
+			text-shadow: 0 0 5px #fff;
+		}
+
+		.textinput{
+			width: 300px;
+		}
+		.textinput2{
+			width: 150px;
+		}
+		.codeimg{
+			vertical-align: middle;
+			height: 30px;
+		}
+		.btn_grp{
+			padding-left: 8.5em;
+
+			.btn1{
+				background: #028d8c;
+				border: none;
+				&:hover{
+					background: darken(#028d8c, 5);
+				}
+			}
+			.btn2{
+				background: #5e5d5d;
+				border: none;
+				&:hover{
+					background: darken(#5e5d5d, 5);
+				}
+			}
+			.btn3{
+				background: #ff7259;
+				border: none;
+				&:hover{
+					background: darken(#ff7259, 5);
+				}
+			}
+		}
+	}
+
+	.int{
+		margin: 0 0 0 350px;
+		font-size: 15px;
+		font-weight: bold;
+		color:#e60012;
+	}
+
+	.copyright{
+		font-size: .75em;
+		line-height: 1.5em;
+		background: #555;
+		color:#fff;
+		padding: 0;
+	// position: absolute;
+	position: relative;
+	top: 100px;
+	width: 1000px;
+	overflow: hidden;
+
+	p{
+		margin: 0;
+		padding: 1em 2em;
+		display: inline-block!important;
+		float: left;
+	}
+	.f-info{
+		margin: 0;
+		display: inline-block;
+
+	}
+}
+
+}
+
+
+
+
+#ValidateCode1_imgValidateCode{
+	vertical-align: middle;
+	height: 36px;
+}
+
+
+
+
+

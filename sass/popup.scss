@@ -1,0 +1,178 @@
+@charset "utf-8";
+// 共通
+@import "_variable";					//變數
+@import "sass/_normalize";				//reset
+@import "sass/_mixin";					//客製MIXIN
+@import "sass/_btn";					//按鈕設定
+@import "sass/_font";					//文字設定
+@import "sass/_form";					//表單
+@import "sass/_grid";					//表單
+
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #eefbdf;
+}
+.popup{
+	width: 100%;
+	min-height: 660px;
+	margin: 0 auto;
+	background: url('../images/popup_bg.png')no-repeat left top;
+	background-size: 100% auto;
+	position: relative;
+
+	h1{
+		margin: 0;
+		padding: 0;
+		height: 80px;
+		img{
+			width: 462px;
+			position: relative;
+			top:20px;
+			left: 50px;
+		}
+		@include screen('mobile') {
+			height: 60px;
+
+			img{
+				width: 90%;
+				left: 20px;		
+			}
+		}
+	}
+	h2{
+		color:#333;
+		margin:.3em 15px;
+	}
+
+	.int{
+		margin: 5px 15px;
+		font-size: 1em;
+		color:#e60012;
+	}
+	.boxblock{
+		background: #fff;
+		border-radius: 12px;
+		margin: 20px 50px;
+		padding: 20px 30px;
+		box-shadow: 0 5px 20px 5px rgba(0, 0, 0, .2);
+		@include screen('mobile') {
+			margin: 20px;
+			padding: 10px 20px;
+		}
+	}
+	.close{
+		width: 28px;
+		height:28px;
+		background:#1b8f8d url('../images/icon_close.png')no-repeat center center;
+		background-size: 20px auto;
+		font-size: 0;
+		border: solid 1px #1b8f8d;
+		border-radius: 5px;
+		position: absolute;
+		top:5px;
+		right:10px;
+		&:hover, &:focus{
+			background:#197a79 url('../images/icon_close.png')no-repeat center center;
+			background-size: 20px auto;
+			border: solid 1px #197a79;
+			box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);	
+		}
+	}
+	.camera{
+		.img-container{
+			border: solid 1px #ccc;
+			min-height: 320px;
+			margin-right: 2em;
+			line-height: 0;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			@include screen('mobile') {
+				margin-right: 0;
+				min-height: 240px;
+			}
+		}
+		.photograph{
+			width: 100%;
+			background: #fd5f43;
+			color:#fff;
+			margin-bottom: .5em;
+			font-size: 1.25em;
+			letter-spacing: 3px;
+			padding: 0.4em 1em !important;
+			&:hover, &:focus{
+				background:darken(#fd5f43,10);
+			}
+		}
+		.p-register, .p-again{
+			width: 100%;
+			background: #2fafad;
+			color:#fff;
+			margin-bottom: .5em;
+			font-size: 1.25em;
+			letter-spacing: 3px;
+			padding: 0.4em 1em !important;
+			&:hover, &:focus{
+				background:darken(#2fafad,10);
+			}
+		}
+	}
+	.photo{
+		box-sizing: border-box;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin:1em 2em 1em 0;
+
+		.col{
+			flex-basis: calc(100% / 12 * 4 - 10px);
+			max-width: calc(100% / 12 * 4 - 10px);
+			border: solid 1px #ccc;
+
+			.img-container{
+				min-height: 112px;
+				margin: 0;
+				border: none;
+				line-height: 0;
+				@include screen('mobile') {
+					min-height: 55px;
+				}
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		@include screen('mobile') {
+			margin-right: 0;
+		}
+	}
+
+	.camera2{
+		.img-container{
+			border: solid 1px #ccc;
+			min-height: 340px;
+			margin-right: 0;
+			line-height: 0;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			@include screen('mobile') {
+				margin-right: 0;
+				min-height: 240px;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+

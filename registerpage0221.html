@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+
+<html>
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	防檢局-屠檢人員簽到退系統
+</title>
+	<!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="css/login.css" /></head>
+<!-- login css -->
+
+<body>
+	<div class="register">
+		<section>
+			<h1>
+				<a href="../Login.aspx"><img src="images/logo.png" alt="防檢局屠檢人員簽到退系統" /></a>
+			</h1>
+
+			<script language="javascript" type="text/javascript">
+
+
+
+				var fso, ts, s ;
+				var ForReading = 1;
+				fso = new ActiveXObject("Scripting.FileSystemObject");
+        //ts = fso.OpenTextFile("d:\\testfile.txt", ForReading);
+        //s = ts.ReadLine();
+        // ori path
+        //ts = fso.OpenTextFile("d:\\exe\\Release\\testfile.txt", ForReading, true);
+        //20191016 modify path
+        ts = fso.OpenTextFile("C:\\WebSgn\\Datalog.txt", ForReading, true);
+
+        while (!ts.AtEndOfStream) {
+        	s = ts.ReadAll();
+        }
+        //alert("檔案內容 =" + s + "");
+        //document.getElementById("ctl00_ContentPlaceHolder1_AnswerBox").value = s;
+        function ShowAnswer() {
+            //document.getElementById("AnswerBox").value = s;
+            document.getElementById("HiddenField1").value = s;
+        }
+        
+
+    </script>
+
+
+
+
+    <h2>屠宰場註冊</h2>
+    <p class="int">請確認本台電腦為屠宰場屠檢人員簽到退使用，註冊成功後只能在本台電腦進行簽到退．</p>
+    <p class="int">註冊前請先下載【<a href="https://mi.baphiq.gov.tw/SetupOnline/Sgn/publish.htm" target="_WebSign">屠宰場電腦驗證程式</a>】並安裝，安裝後填寫下方註冊資訊。</p>
+    <form method="post" action="./registerpage.aspx" id="form1" class="form_inline">
+    	<div class="aspNetHidden">
+    		<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+    		<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+    		<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+    		<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="aZ4asreSdpoxNoIqbrC6a4balzh0Ojdjc16DRxr/RtLM0s8hUaD46Mvx8gRQYSrWImvZOJzMBDHp8KLGBDaApo4W5U0Ho3L2Uf5TqXidvQz0emrnVGWnLt4Cr1iTi28YzQmDfA==" />
+    	</div>
+
+    	<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+	theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+	if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+		theForm.__EVENTTARGET.value = eventTarget;
+		theForm.__EVENTARGUMENT.value = eventArgument;
+		theForm.submit();
+	}
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=LXijyRIYkAOZurynao7X2sQA33KcJWdfFpQGvJozVzwuTp4zxICxvnvSW0eTUQQoIepbvk0J2Ri-5WCLwH3ZO29jt9w1&amp;t=637101118300000000" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="50FF9095" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ZRQ4KQwUFBz/whyksHfIMK8DfP0OKWYlRE3ODi8ANKIDjVbo67k9vNQBznr6g0g6wYQLTEdZw/sJQz6Ca8xejX521ulI/Qu7eXVc09s5mIO0XzYxmTHl5jwJkeQ20ETxzD4NnCBZsm+7xsQr2LgNmB8PoHHJuNtaAKq7dNPeZpXh3fqJLgXTPjNBvLmyef7vyxmK5aRn2juFf1zWndKQRqqsDlJTDLvfwD1cepLsISqKgFAKZjnQ8T+WS62iZNKwzxFxF8lDWrI4JLJ+GtG2BmBcsYC2PKUetBYM17bXqDsaS3T1" />
+</div>
+<div class="form_grp">
+	<label for="">輸入註冊碼：</label>
+	<input name="txtRegisterCode" type="text" id="txtRegisterCode" class="textinput" />
+</div>
+<div class="form_grp">
+	<label for="">屠宰場代號：</label>
+	<input name="txtButcherId" type="text" maxlength="4" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;txtButcherId\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;if ((event.keyCode&lt;48 || event.keyCode>57)) event.returnValue=false" id="txtButcherId" class="textinput" onkeydown="if(event.keyCode==13)event.keyCode=9" />
+</div>
+<div class="form_grp">
+	<label for="">屠宰場名稱：</label>
+	<input name="txtButcherName" type="text" id="txtButcherName" class="textinput" />
+
+</div>
+<div class="form_grp">
+	<label for="username">屠檢人員帳號：</label>
+	<input name="txtButcherAccount" type="text" id="txtButcherAccount" class="textinput" />
+</div>
+<div class="form_grp">
+	<label for="password">密　碼：</label>
+	<input name="txtPW" type="password" id="txtPW" class="textinput" />
+</div>
+
+<input type="hidden" name="HiddenField1" id="HiddenField1" />
+<div class="btn_grp">
+	<input type="submit" name="BtnSubmit" value="註冊" id="BtnSubmit" class="btn1" />
+	<input type="submit" name="BtnRest" value="清除" id="BtnRest" class="btn2" />
+
+</div>
+</form>
+<script language="javascript" type="text/javascript">
+	ShowAnswer();
+
+</script>
+
+<div class="copyright">
+	<p class="f-info">
+		維護單位：凌網科技股份有限公司<br>
+		客服人員：鄭筱萍小姐    客服電話：03-5601285<br>
+		客服信箱：baphiq@hyweb.com.tw    傳真：03-5601297<br>
+	</p>
+	<p>
+		Copyright© 2019 All rights are reserved.版權所有，轉載必究<br>
+		台北市中正區和平西路二段100號9樓<br>
+		9F., No. 100, Sec. 2, Heping W. Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)
+	</p>	
+</div>
+</section>
+</div>
+</body>
+</html>

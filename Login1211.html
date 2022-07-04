@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+
+<html>
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	防檢局-屠檢人員簽到退系統
+</title>
+	<!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="css/login.css" /></head>
+<!-- login css -->
+
+<body>
+    <div class="login">
+       <section>
+          
+          
+          <h1>
+             <a href="../Login.aspx"><img src="images/logo.png" alt="防檢局屠檢人員簽到退系統" /></a>
+         </h1>
+
+
+
+         <script language="javascript" type="text/javascript">
+
+
+    //var WshShell = new ActiveXObject("Wscript.Shell");
+    //WshShell.Run("rundll32.exe dfshim.dll,ShOpenVerbShortcut C:\\WebSgn\\線上簽到退.appref-ms ");
+    //WshShell.Quit;
+    //C:\Users\A6005>rundll32.exe dfshim.dll,ShOpenVerbShortcut C:\\WebSgn\\線上簽到退.appref-ms
+
+    function ShowAnswer() {
+
+        // 先去 c:/websign 拿exe檔路徑
+        var fso, ts, s;
+        var ForReading = 1;
+        fso = new ActiveXObject("Scripting.FileSystemObject");
+        //ts = fso.OpenTextFile("d:\\testfile.txt", ForReading);
+        //s = ts.ReadLine();
+        // ori path
+        //ts = fso.OpenTextFile("d:\\exe\\Release\\testfile.txt", ForReading, true);
+        //20191016 modify path
+        ts = fso.OpenTextFile("C:\\WebSgn\\ExePath.TXT", ForReading, true);
+
+        while (!ts.AtEndOfStream) {
+            s = ts.ReadAll();
+        }
+
+
+        //var exePtah = s + "\\屠檢人員簽到退作業系統.exe 0,0";
+        // 20191028 新增 屠宰場 id 
+        //var exePtah = s + "\\屠檢人員簽到退作業系統.exe 0,0,01";
+        //20191105_0952 修改exe名稱
+        var exePtah = s + "\\線上簽到退.exe 0,0,01";
+
+        // 呼叫 exe 產生 txt 檔案
+        var WshShell = new ActiveXObject("Wscript.Shell");
+        //WshShell.Run("D:\\Mac_exe\\Release\\GetMacdata.exe");
+        WshShell.Run(exePtah.toString());
+        WshShell.Quit;
+
+        //// 設定 delay , 
+        var startTime = new Date();
+        setTimeout(function () { runSign(); }, 3000);
+    }
+    
+    function runSign() {
+        //拿取檔案
+        var fso, ts, s;
+        var ForReading = 1;
+        fso = new ActiveXObject("Scripting.FileSystemObject");
+        try
+        {
+            //ts = fso.OpenTextFile("C:\\TestDir\\Write.TXT", ForReading, true);
+            //ts = fso.OpenTextFile("d:\\exe\\Release\\testfile.txt", ForReading, true);
+
+            // 20191026 modify get mac, hdd, verifyvaluetype
+            ts = fso.OpenTextFile("C:\\WebSgn\\Datalog.txt", ForReading, true);
+
+            while (!ts.AtEndOfStream) {
+                s = ts.ReadAll();
+            }
+            //alert("檔案內容 =" + s + "");
+
+            document.getElementById("HiddenField1").value = s;
+
+
+            // add cookie
+            document.cookie = "MacHDDVerifyTypeCookie =" + s;
+            // end cookie
+
+            // 執行 BtnOK 的行為
+            var clickButton = document.getElementById("BtnOK");
+            clickButton.click();
+        }
+        catch(e)
+        {
+            alert("找不到mac檔" + e.toString());
+        }
+    }
+
+    
+</script>
+
+
+
+
+
+
+
+
+<form method="post" action="./Login.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" class="form_inline">
+    <div class="aspNetHidden">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="SQiB1Ozo2GSERx0f9CbtMGF74+8IaaoW0htA6JAHziyNDD8frZUwLo2MWf+EObPbKMcJcx8MX1d3K3FL4Xe1IfDbVUdB65/Y1X+TQT+qX6vcTx34V5xNPh6MdFutdmze/0ynf/nrvzSr1ET08VaVwxIUAP2Cxc+mngPxvLpc7UtolSpRr0FXygQ2KJrKYux+k8/Y5ZmWQgnz8YlDdcke0UfxPeT+mhcDlFbIx+T9Yx2rY0MVEggTB4qjJEX5bgHh1/KSoqYz5T41zt3eisnq21zXlI4=" />
+    </div>
+
+    <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=h_zuRlMUzfMRSNn71-7Do0fPwQdC_2_FwLlAHkYAMrvnLbtb3WANsdV_y2q44LIwQmKE1AZnwPTpOTO1gfYmyl2UuRI1&amp;t=636935173199995647" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=oeYSaDz-rYk6w7XecZGRpgVeuQIjmOQYm7g9WNo6cGxqsco3OcU1zHn9YiyGLyBkhQEkgMhsdoGtYv3xGKORRZb8rjk1&amp;t=636935173199995647" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+    if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+    return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="nMm1rH7j4QobEkfbwdhx/X+C9GlesZ8VUD59reUasmULhm0iB6eYmHnkx6G5GFOvra0gCgt0rYGJqXXcROr1tXZqS2D4Jiz3lLcD0v+aY/iAuBf8zRVOxEUbGAZB5LlA9X0REdFP0dW6KCU+k4UpLSGmOQYUC1umqfCUdZEYhb5ePdvZQL3+K+boB2L/ypKN2UTO9C2KNNJq8wIz3xWF4FdUvUIXugg++yT2AdU43LIi8WqbBmEcTewbNDypP7l8SGk/WaTHoontOc/zNPttjGUm6oA=" />
+</div>
+<div class="form_grp">
+    <label for="username">帳　號：</label>
+    <input name="txtID" type="text" id="txtID" class="textinput" />
+    <span id="RequiredFieldValidator1" style="visibility:hidden;">*必填</span>
+</div>
+<div class="form_grp">
+    <label for="password">密　碼：</label>
+    <input name="txtPW" type="password" id="txtPW" class="textinput" AUTOCOMPLETE="off" />
+    <span id="RequiredFieldValidator2" style="visibility:hidden;">*必填</span>
+</div>
+<div id="trEdLeeCaptcha" class="form_grp">
+    <label for="username">驗證碼：</label>
+    <input name="txtCaptcha" type="text" id="txtCaptcha" class="textinput2" AUTOCOMPLETE="off" />
+    
+    <style type="text/css">
+     #chgImg {cursor:hand; background: #eee;}
+ </style>
+ <script type="text/javascript" src="/js/jquery-1.3.2.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function(){
+       $("#chgImg").click(function (){
+        var mynewn = new Date().getTime();
+        $('#ValidateCode1_imgValidateCode').attr("src", "/ValidateCode.ashx?r=" + mynewn);
+    });  
+   });  
+</script> 
+
+<img id="ValidateCode1_imgValidateCode" src="images/code2.png" alt="圖形驗證碼" style="border-width:0px;" /> 
+<a id="chgImg"></a> 
+
+<button type="button" class="icon-arrows-cw reload" title="更新驗證碼">更新驗證碼</button>            
+</div>
+
+
+<input type="hidden" name="HiddenField1" id="HiddenField1" />
+<div class="btn_grp">
+    <input type="button" value="登入" onclick="ShowAnswer()">
+    <div hidden>
+        <input type="submit" name="BtnOK" value="登入" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnOK&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="BtnOK" class="btn1" />
+    </div>
+    <input type="submit" name="BtnRest" value="清除" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnRest&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="BtnRest" class="btn2" />
+    <input type="submit" name="BtnForget" value="忘記密碼" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnForget&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="BtnForget" class="btn3" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator1"), document.getElementById("RequiredFieldValidator2"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+RequiredFieldValidator1.controltovalidate = "txtID";
+RequiredFieldValidator1.errormessage = "*必填";
+RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator1.initialvalue = "";
+var RequiredFieldValidator2 = document.all ? document.all["RequiredFieldValidator2"] : document.getElementById("RequiredFieldValidator2");
+RequiredFieldValidator2.controltovalidate = "txtPW";
+RequiredFieldValidator2.errormessage = "*必填";
+RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator2.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+    </script>
+</form>
+<script language="javascript" type="text/javascript">
+            //ShowAnswer();
+            
+        </script>
+        
+        <div class="copyright">
+         <p class="f-info">
+            維護單位：凌網科技股份有限公司<br>
+            客服人員：鄭筱萍小姐    客服電話：03-5601285<br>
+            客服信箱：baphiq@hyweb.com.tw    傳真：03-5601297<br>
+        </p>
+        <p>
+            Copyright© 2019 All rights are reserved.版權所有，轉載必究<br>
+            台北市中正區和平西路二段100號9樓<br>
+            9F., No. 100, Sec. 2, Heping W. Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)
+        </p>	
+    </div>
+</section>
+
+</div>
+<script src="js/jquery-1.8.0.min.js"></script>
+
+<script type="text/javascript">
+    $().ready(function (e) {
+        $(function () {
+            $(".icon-arrows-cw").click(function () {
+                var mynewn = new Date().getTime();
+                $('#ValidateCode1_imgValidateCode').attr("src", "/ValidateCode.ashx?r=" + mynewn);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

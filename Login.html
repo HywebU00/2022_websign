@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+
+<html>
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	防檢局-屠檢人員簽到退系統
+</title>
+	<!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="css/login.css" /></head>
+<!-- login css -->
+
+<body>
+	<div class="login">
+		<section>
+			
+			
+			<h1>
+				<a href="../admin/index.aspx"><img src="images/logo.png" alt="防檢局屠檢人員簽到退系統" /></a>
+			</h1>
+			<form name="form1" method="post" action="./Login.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" class="form_inline">
+				<div>
+					<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+					<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+					<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+					<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ZoUWCjaLX9z7zfH1XfWo1wd30YQNxfSJkMBrnSCpHW4P0HzrKINsE0yflMDJPJS9Udd6IoFm1orFHOGwt4Vn87EHARvzyDSGBOVSDAUSVyM6NJRKEKTqeihcLmYuPoGvl+E1H27ScZN6Yzxw3YjmbqP3l1pcgWzg4L3sQGwUbWCFGiaQHHw98V5M945oxnwfrcF/lnyncxF8bAj/h1A1Y7Gks48jiSBcx2lJNkxE2hqHHLvjT4GE3ob4eQF2+t0xOLBXZ9mutBg7EpGlmnfO+ixnFn4GMWUCJHax/bzQ7yoLhAGK" />
+				</div>
+
+				<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+	theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+	if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+		theForm.__EVENTTARGET.value = eventTarget;
+		theForm.__EVENTARGUMENT.value = eventArgument;
+		theForm.submit();
+	}
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=h_zuRlMUzfMRSNn71-7Do0fPwQdC_2_FwLlAHkYAMrvnLbtb3WANsdV_y2q44LIwQmKE1AZnwPTpOTO1gfYmyl2UuRI1&amp;t=636935173199995647" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=oeYSaDz-rYk6w7XecZGRpgVeuQIjmOQYm7g9WNo6cGxqsco3OcU1zHn9YiyGLyBkhQEkgMhsdoGtYv3xGKORRZb8rjk1&amp;t=636935173199995647" type="text/javascript"></script>
+<script src="/WebResource.axd?d=LZF-iwmaEa74uSDjaJoB5Y8_GOhTZTbrhqtg0uS0cuRyT54-a4mlZjX419r2sPdJ9o-Ku0SwbmTXu3BIASnY6X6uEwM1&amp;t=636935173199995647" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+	if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+	return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="JWMaQDiBByVGUs+8iuiHxKtyHdC4Ns+r38JIRHgxaX4Qh5G17FZYnrtOf0gAdmZijdwn7c6+IO+C4TckMiiii1Yzj/yjhmnLvi1eJxRprQ0/l+PmZFR7F1oQzafUYZZfSde51ZXB1KYweOPpVnnBjExkfxxFkM50IuHIh9Ne497arFg1MdVxWfA2UT8UW/pIyHjcuZJgCfALYcNWd1PZjWmnf8Et3vMaNK4fwsIb2AcwoxkX3sC79hjYGX3yJOAEvgag/A==" />
+</div>
+<div class="form_grp">
+	<label for="username">帳　號：</label>
+	<input name="txtID" type="text" id="txtID" class="textinput" AUTOCOMPLETE="off" />
+	<span id="RequiredFieldValidator1" style="color:Red;visibility:hidden;">*必填</span>
+</div>
+<div class="form_grp">
+	<label for="password">密　碼：</label>
+	<input name="txtPW" type="password" id="txtPW" class="textinput" AUTOCOMPLETE="off" />
+	<span id="RequiredFieldValidator2" style="color:Red;visibility:hidden;">*必填</span>
+</div>
+<div id="trEdLeeCaptcha" class="form_grp">
+	<label for="username">驗證碼：</label>
+	<input name="txtCaptcha" type="text" id="txtCaptcha" class="textinput2" AUTOCOMPLETE="off" />
+	
+	<style type="text/css">
+		#chgImg {cursor:hand; background: #eee;}
+	</style>
+	<script type="text/javascript" src="/js/jquery-1.3.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#chgImg").click(function (){
+				var mynewn = new Date().getTime();
+				$('#ValidateCode1_imgValidateCode').attr("src", "/ValidateCode.ashx?r=" + mynewn);
+			});  
+		});  
+	</script> 
+
+	<img id="ValidateCode1_imgValidateCode" src="images/code2.png" alt="圖形驗證碼" style="border-width:0px;" /> 
+	<a id="chgImg"></a> 
+
+</div>
+
+<div class="btn_grp">
+	<input type="submit" name="BtnOK" value="登入" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnOK&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="BtnOK" class="btn1" />
+	
+	<input type="submit" name="BtnRest" value="清除" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnRest&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="BtnRest" class="btn2" />
+	<input type="submit" name="BtnForget" value="忘記密碼" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnForget&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="BtnForget" class="btn3" />
+</div>
+<div class="btn_grp2">
+	
+	<input type="button"    Class="btn4"  onclick="location.replace('RegisterPage.aspx');" value="屠宰場註冊">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator1"), document.getElementById("RequiredFieldValidator2"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+RequiredFieldValidator1.controltovalidate = "txtID";
+RequiredFieldValidator1.errormessage = "*必填";
+RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator1.initialvalue = "";
+var RequiredFieldValidator2 = document.all ? document.all["RequiredFieldValidator2"] : document.getElementById("RequiredFieldValidator2");
+RequiredFieldValidator2.controltovalidate = "txtPW";
+RequiredFieldValidator2.errormessage = "*必填";
+RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator2.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+	ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+	if (Page_ValidationActive) {
+		return ValidatorCommonOnSubmit();
+	}
+	else {
+		return true;
+	}
+}
+        WebForm_AutoFocus('txtID');//]]>
+    </script>
+</form>
+
+<div class="copyright">
+	<p class="f-info">
+		維護單位：凌網科技股份有限公司<br>
+		客服人員：鄭筱萍小姐    客服電話：03-5601285<br>
+		客服信箱：baphiq@hyweb.com.tw    傳真：03-5601297<br>
+	</p>
+	<p>
+		Copyright© 2019 All rights are reserved.版權所有，轉載必究<br>
+		台北市中正區和平西路二段100號9樓<br>
+		9F., No. 100, Sec. 2, Heping W. Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)
+	</p>	
+</div>
+</section>
+
+</div>
+</body>
+</html>
