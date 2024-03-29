@@ -16,7 +16,7 @@ body{
 	// width: 1000px;
 	// height: 630px;
 	max-width: 1000px;
-	height: 620px;
+	min-height: 600px;
 	margin: 0 auto;
 	background: url('../images/login-bg.jpg')no-repeat left top;
 	background-size: cover;
@@ -29,19 +29,21 @@ body{
 	h1{
 		margin: 0 50px 10px 0;
 		padding: 60px 0 0 0;
-		text-align: right;
+		margin-left: 43%;
+		// text-align: right;
 		img{
 			// width: 50%;
-			width: 500px;
+			width: 95%;
 			// position: relative;
 			// top:60px;
 			// left: 420px;
 		}
 		@include screen('mobile') {
 			margin: 0;
+			padding: 30px 0 0 0;
 			text-align: center;
 			img{
-				width: 300px;
+				width: 86%;
 			}
 		}
 	}
@@ -50,11 +52,12 @@ body{
 		// position: absolute;
 		// top:28%;
 		// left: 52%;
-		position: absolute;
-		top:150px;
-		right:50px;
+		position: relative;
+		top:10px;
+		left:45%;
+		// right:50px;
 		padding: 30px 10px 20px 30px;
-		min-width: 400px;
+		width: 45%;
 		background: rgba(255, 255, 255, .8);
 		border-radius: 10px;
 		box-shadow: 0 0 5px 1px rgba(0, 0, 0, .2);
@@ -78,7 +81,10 @@ body{
 		}
 
 		.textinput{
-			width: 300px;
+			width: 80%;
+			@include screen('mobile') {
+				width: 100%;
+			}
 		}
 		.textinput2{
 			width: 150px;
@@ -149,7 +155,7 @@ body{
 	position: relative;
 	// top: 500px;
 	// width: 1000px;
-	top: 480px;
+	top: 120px;
 	width: 100%;
 	overflow: hidden;
 	@include screen('mobile') {
@@ -173,30 +179,72 @@ body{
 
 
 .register{
-	width: 1000px;
-	height: 580px;
+	// width: 1000px;
+	// height: 580px;
+	// margin: 0 auto;
+	// background: url('../images/login-bg.jpg')no-repeat left top;
+	// background-size: 100% auto;
+	// position: relative;
+	max-width: 1000px;
+	min-height: 600px;
 	margin: 0 auto;
 	background: url('../images/login-bg.jpg')no-repeat left top;
-	background-size: 100% auto;
+	background-size: cover;
 	position: relative;
 
+	// h1{
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	img{
+	// 		width: 50%;
+	// 		margin: .3em 0 0 251px;
+	// 	}
+	// }
 	h1{
-		margin: 0;
-		padding: 0;
+		margin: 0 50px 10px 0;
+		padding: 30px 0 0 35px;
 		img{
-			width: 50%;
-			margin: .3em 0 0 251px;
+			width: 500px;
+		}
+		@include screen('mobile') {
+			margin: 0;
+			padding: 30px 0 10px 0;
+			text-align: center;
+			img{
+				width: 86%;
+			}
 		}
 	}
 	h2{
-		margin: .5em 0 .3em 350px;
-		padding: 0;		
+		margin: .5em 0 .3em 35%;
+		padding: 0;
+		@include screen('mobile') {
+			margin: .5em auto;
+			text-align: center;
+			text-shadow: 2px 2px 3px #fff;
+		}	
 	}
 	.form_inline{
-		max-width: 500px;
+		// max-width: 500px;
+		// position: relative;
+		// top:10px;
+		// left: 50%;
+		// position: absolute;
 		position: relative;
-		top:10px;
-		left: 50%;
+		top:20px;
+		left:35%;
+		padding: 30px 10px 20px 30px;
+		width: 55%;
+		background: rgba(255, 255, 255, .8);
+		border-radius: 10px;
+		box-shadow: 0 0 5px 1px rgba(0, 0, 0, .2);
+		@include screen('mobile') {
+			position: static;
+			min-width: auto;
+			width: 80%;
+			padding: 20px;
+			margin: 30px auto 10px;
+		}
 
 		.form_grp{
 			display: block;
@@ -207,10 +255,16 @@ body{
 			float: left;
 			line-height: 2em;
 			text-shadow: 0 0 5px #fff;
+			@include screen('mobile') {
+				text-align: left;
+			}
 		}
 
 		.textinput{
 			width: 300px;
+			@include screen('mobile') {
+				width: 100%;
+			}
 		}
 		.textinput2{
 			width: 150px;
@@ -221,6 +275,11 @@ body{
 		}
 		.btn_grp{
 			padding-left: 8.5em;
+			@include screen('mobile') {
+				width: 100%;
+				padding-left: 0;
+				text-align: center;
+			}
 
 			.btn1{
 				background: #028d8c;
@@ -247,10 +306,19 @@ body{
 	}
 
 	.int{
-		margin: 0 0 0 350px;
+		margin: 0 20px 0 35%;
 		font-size: 15px;
 		font-weight: bold;
 		color:#e60012;
+		line-height: 1.3em;
+		@include screen('tablet') {}
+		@include screen('mobile') {
+			margin: 0 30px;
+			background: rgba(255, 255, 255, .6);
+			padding: 10px;
+			border-radius: 10px;
+			box-shadow: 0 0 5px 1px rgba(0, 0, 0, .2);
+		}
 	}
 
 	.copyright{
@@ -261,9 +329,14 @@ body{
 		padding: 0;
 	// position: absolute;
 	position: relative;
-	top: 100px;
-	width: 1000px;
+	// top: 500px;
+	// width: 1000px;
+	top: 50px;
+	width: 100%;
 	overflow: hidden;
+	@include screen('mobile') {
+		top: 40px;
+	}
 
 	p{
 		margin: 0;
